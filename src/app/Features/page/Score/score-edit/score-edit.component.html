@@ -1,0 +1,19 @@
+<br><br><br><br>
+<h1 center>Edit Score</h1>
+<hr> <br>
+<form class="form" [formGroup]="dataform" (ngSubmit)="submit()">
+    <label for="formGroupExampleInput" class="form-label">Student</label>
+    <select class="form-control" formControlName="StudentId">
+        <option *ngFor="let Student of student" value="{{Student.id}}">{{Student.name}}</option>
+    </select>
+
+    <label for="formGroupExampleInput" class="form-label">Subject</label>
+    <select class="form-control" formControlName="SubjectId">
+        <option *ngFor="let Subject of subject" value="{{Subject.id}}">{{Subject.name}}</option>
+    </select>
+    <label for="formGroupExampleInput" class="form-label">Rating</label>
+    <input type="number" class="form-control" id="formGroupExampleInput" formControlName="rating" placeholder="rating">
+    <br>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+

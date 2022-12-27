@@ -1,0 +1,33 @@
+
+<div class="container">
+    <h3 class="text-center p-3">
+        <span style="color: #110949"> </span>
+        <br> <br>
+          <span ><i class="bi bi-building"></i> Score </span>
+      <hr>
+          
+          <div class="text-center">
+            <button routerLink="/score-create" type="button" class="btn btn-success"><i class="bi-alarm"></i>Score Students </button>
+        </div>
+        </h3>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">Student</div> 
+        <div class="col col-2">Subject</div>
+        <div class="col col-3">Rating</div>  
+        <div class="col col-4">Literal</div>
+        <div class="col col-5">Options</div>
+      </li>
+      <li class="table-row" *ngFor="let Score of score">
+        <div class="col col-1" >{{Score.StudentsId}}</div>
+        <div class="col col-2" >{{Score.SubjectId}}</div>
+        <div class="col col-3" >{{Score.rating}}</div>
+        <div class="col col-4" >{{Score.literals | literals}}</div>
+        <div class="col col-5"> 
+          <i  routerLink="/score-edit/{{(Score.id)}}"class="far fa-edit" style="color:green">  </i>
+          <i  (click)="ShowModal(Score.id)" class="far fa-trash-alt" style="color:red"></i>
+      </div>
+      
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,8 @@
+<br><br><br><br>
+<h1 center>Edit Student</h1>
+<hr> <br>
+<form class="form" [formGroup]="dataform" (ngSubmit)="submit()">
+    <label for="formGroupExampleInput" class="form-label">Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" formControlName="name" placeholder="Name"> <br>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

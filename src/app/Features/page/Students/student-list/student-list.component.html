@@ -1,0 +1,26 @@
+
+<div class="container">
+    <h3 class="text-center p-3">
+        <span style="color: #110949"> </span>
+        <br> <br>
+          <span ><i class="bi bi-building"></i> Students </span>
+      <hr>
+          
+          <div class="text-center">
+            <button routerLink="/student-create" type="button" class="btn btn-success"><i class="bi-alarm"></i>Register Students </button>
+        </div>
+        </h3>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">Name</div> 
+      </li>
+      <li class="table-row" *ngFor="let Student of student">
+        <div class="col col-1" >{{Student.name}}</div>
+        <div class="col col-4"> 
+          <i  routerLink="/student-edit/{{(Student.id)}}"class="far fa-edit" style="color:green">  </i>
+          <i  (click)="ShowModal(Student.id)" class="far fa-trash-alt" style="color:red"></i>
+      </div>
+      
+      </li>
+    </ul>
+  </div>

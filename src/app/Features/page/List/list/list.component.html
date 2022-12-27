@@ -1,0 +1,31 @@
+<div class="container">
+    <h3 class="text-center p-3">
+        <span style="color: #110949"> </span>
+        <br> <br>
+        <span><i class="bi bi-building"></i> Lists </span>
+        <hr>
+
+        <div class="text-center">
+            <button routerLink="/list-create" type="button" class="btn btn-success"><i class="bi-alarm"></i>Register
+                Lists </button>
+        </div>
+    </h3>
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-1">Name</div>
+            <div class="col col-2">DayList</div>
+            <div class="col col-3">Created</div>
+            <div class="col col-4">Options</div>
+        </li>
+        <li class="table-row" *ngFor="let List of list">
+            <div class="col col-1">{{List.name}}</div>
+            <div class="col col-1">{{List.dayListId}}</div>
+            <div class="col col-1">{{List.Created}}</div>
+            <div class="col col-4">
+                <i routerLink="/list-edit/{{(List.id)}}" class="far fa-edit" style="color:green"> </i>
+                <i (click)="ShowModal(List.id)" class="far fa-trash-alt" style="color:red"></i>
+            </div>
+
+        </li>
+    </ul>
+</div>
