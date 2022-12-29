@@ -31,7 +31,7 @@ export class ScoreEditComponent implements OnInit {
   ) {}
   private initializeForm(): void {
     this.dataform = new FormGroup({
-      StudentId: new FormControl(''),
+      StudentsId: new FormControl(''),
       SubjectId: new FormControl(''),
       rating: new FormControl(''),
     });
@@ -50,8 +50,8 @@ export class ScoreEditComponent implements OnInit {
     this.scoreService.loadById(scoreId).subscribe((data: any) => {
       this.score = data;
       this.dataform.setValue({
-        StudentId: this.findstudentByName(this.score.StudentsId.name)?.id,
-        SubjecId: this.findSubjectByName(this.score.SubjectId.name)?.id,
+        StudentsId: this.findstudentByName(this.score.StudentsId.name)?.id,
+        SubjectId: this.findSubjectByName(this.score.SubjectId.name)?.id,
         rating: this.score.rating,
       });
 
@@ -65,6 +65,7 @@ export class ScoreEditComponent implements OnInit {
       ...this.dataform.value,
       StudentsId: this.findstudentById(this.dataform.value.studentId),
       SubjectId: this.findSubjectById(this.dataform.value.subjectId),
+      rating: this.score.rating,
     } as Score;
 
        edit.id = scoreId as any;

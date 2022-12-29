@@ -25,7 +25,7 @@ export class BaseService<T extends BaseModels> {
   }
 
   update(record: Partial<T>) {
-    return this.http.put(`${environment.API}${this.controller}/${record.id}`, record);
+    return this.http.put(`${environment.API}${this.controller}`, record);
   }
 
   remove(id: number) {

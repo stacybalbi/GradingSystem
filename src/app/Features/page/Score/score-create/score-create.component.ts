@@ -37,7 +37,7 @@ export class ScoreCreateComponent implements OnInit {
 
   private initializeForm(): void {
     this.dataform = new FormGroup({
-      StudentId: new FormControl(''),
+      StudentsId: new FormControl(''),
       SubjectId: new FormControl(''),
       rating: new FormControl(''),
     });

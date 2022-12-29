@@ -13,25 +13,19 @@ import Swal from 'sweetalert2';
   styleUrls: ['./score-list.component.scss'],
 })
 export class ScoreListComponent implements OnInit {
-  score: Score[] = [];
+  score!: Score[];
 
   students!: Students[];
   subject!: Subject[];
 
-  constructor(
-    private scoreService: ScoreService,
-    private studentservice: StudentsService,
-    private subjectService: SubjectsService
-  ) {}
+  constructor(private scoreService: ScoreService) {}
 
   ngOnInit(): void {
     this.getscore();
-    this.getstudent();
-    this.getsubject();
   }
 
   getscore() {
-    this.scoreService.list().subscribe((data: any) => {
+    this.scoreService.list().subscribe((data : any) => {
       this.score = data;
     });
   }
@@ -63,17 +57,5 @@ export class ScoreListComponent implements OnInit {
 
   loadById(id: any) {
     return null;
-  }
-
-  getstudent() {
-    this.studentservice.list().subscribe((data: any) => {
-      this.students = data;
-    });
-  }
-
-  getsubject() {
-    this.subjectService.list().subscribe((data : any) => {
-      this.subject = data;
-    });
   }
 }

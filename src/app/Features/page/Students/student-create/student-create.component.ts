@@ -25,7 +25,7 @@ export class StudentCreateComponent implements OnInit {
 
   private initializeForm(): void {
     this.dataform = new FormGroup({
-      name: new FormControl(''),
+      Name: new FormControl(''),
     });
   }
 

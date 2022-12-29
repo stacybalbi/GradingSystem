@@ -3,7 +3,7 @@
 <hr> <br>
 <form class="form" [formGroup]="dataform" (ngSubmit)="submit()">
     <label for="formGroupExampleInput" class="form-label">Student</label>
-        <select class="form-control" formControlName="StudentId">
+        <select class="form-control" formControlName="StudentsId">
             <option *ngFor="let Student of students" value="{{Student.id}}">{{Student.name}}</option>
         </select>
 

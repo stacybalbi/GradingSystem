@@ -19,8 +19,8 @@
         <div class="col col-5">Options</div>
       </li>
       <li class="table-row" *ngFor="let Score of score">
-        <div class="col col-1" >{{Score.StudentsId}}</div>
-        <div class="col col-2" >{{Score.SubjectId}}</div>
+        <div class="col col-1" >{{Score.StudentsId.name}}</div>
+        <div class="col col-2" >{{Score.SubjectId.name}}</div>
         <div class="col col-3" >{{Score.rating}}</div>
         <div class="col col-4" >{{Score.literals | literals}}</div>
         <div class="col col-5"> 

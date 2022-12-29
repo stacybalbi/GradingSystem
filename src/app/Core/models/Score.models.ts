@@ -4,8 +4,8 @@ import { Students } from './Students.models';
 import { Subject } from './Subject.models';
 
 export interface Score extends BaseModels {
-  StudentsId: Students,
-  SubjectId: Subject,
-  rating: number,
-  literals: Literals
+  StudentsId: { name: string };
+  SubjectId: { name: string };
+  rating: number;
+  literals: Literals;
 }
